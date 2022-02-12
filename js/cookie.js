@@ -24,7 +24,7 @@ document.cookie = mycookie;
 
 
 //쿠키 확인
-console.log(document.cookie)
+// console.log(document.cookie)
 
 
 // 특정문자를 기준으로 배열 생성
@@ -36,7 +36,6 @@ console.log(document.cookie)
 
 function checkCookie(name){
 var cookies = document.cookie.split(';');
-console.log(cookies);
 
 var visited = false; //방문 거짓
 

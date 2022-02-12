@@ -14,13 +14,37 @@
   --font-product: 'Roboto', sans-serif;
 }
 
-
+html{
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; 
+} 
+::-webkit-scrollbar {
+  display: none;
+}
 
 
 *{
   margin: 0; padding: 0;
+  box-sizing: border-box;
 }
 
+.supah-scroll {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  will-change: transform;
+  overflow: hidden;
+}
+
+body.hidden {height:100%; min-height:100%; overflow:hidden !important; touch-action:none;}
+
+
+h1{
+  z-index: 5;
+}
 
 h6{
   /* font-family: 'Lora', serif; */
@@ -36,24 +60,29 @@ hr{
 
 html{
   background-color: var(--background-color);
+
 }
 
 body{
-  position: relative;
+  width: 100%;
 }
 
 header{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
   padding: 0 50px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-
 
 nav{
   display: flex;
   justify-content: right;
   align-items: center;
-  width: 100%;
+  width: 90%;
 }
 
 nav div {
@@ -63,6 +92,7 @@ nav div {
 }
 
 .quty__st1 {
+  box-sizing: content-box;
   display: inline-block;
   min-width: 18px;
   min-height: 18px;
@@ -70,9 +100,10 @@ nav div {
   text-align: center;
   padding: 3px;
   font-size: 0.8rem;
-  margin: 0 0 -3px 3px;
+  margin: 0 0 -2px 3px;
   border-radius: 50px;
   
+  line-height: 15px;
   background-color: var(--accent-color);
 }
 
@@ -93,10 +124,11 @@ nav div a {
 }
 
 .navbar__btn{
-
+  z-index: 30;
 }
 
 .search-box{
+  box-sizing: content-box;
   padding: 5px 30px;
   transition: 0.4s;
   height: 30px;
@@ -171,10 +203,9 @@ nav div a {
   position: fixed;
   top: 0;
   text-align: right;
-  z-index: 25;
-
   right: -30%;
   transition: all .3s ease-out;
+  z-index: 25;
 }
 
 .cart.active{
@@ -188,41 +219,42 @@ nav div a {
   font-size: 24px;
   color: var(--text-b-color);
   text-align: right;
-  
 }
 
+
 .cart__main{
-  padding: 0 50px;
+  padding: 0 40px;
 }
 
 
 .cart__top{
-  padding: 0 50px 20px;
+  padding: 0 40px 25px;
   text-align: left;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .cart__top h6 {
   display: inline-block;
-  height: 10px;
-  padding: 0;
+  height: 15px;
   font-size: 2rem;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.01em;  
 }
 
 .quty__st2{
+  box-sizing: content-box;
   display: inline-block;
   min-width: 18px;
   min-height: 18px;
-  vertical-align: top;
   color: var(--text-w-color);
   text-align: center;
   padding: 3px;
   font-size: 0.8rem;
   border-radius: 50px;
-  margin-top: 15px;
+  line-height: 15px;
   background-color: var(--accent-color);
+  margin: 35px 7px 0 0;
 }
 
 .cart__item{
@@ -235,6 +267,7 @@ nav div a {
   width: 50%;
   height: 220px;
   padding: 20px 20px 20px 0;
+  margin-bottom: 20px;
 }
 
 .cart__img img{
@@ -309,27 +342,28 @@ nav div a {
   width: 100%;
   height: 100vh;
   background-color: var(--accent-color);
+  text-align: right;
+  transition: all .5s ease-in-out;
+  
   position: absolute;
   top: -100%;
-  left: 0;
+  left: 0%;
   z-index: 10;
-
-  text-align: right;
-  transition: all .3s ease-out;
-  display: none;
 }
 
 .hamburger__menu__bg.active{
   display: block;
-  top:0;
+  top:0%;
+}
+
+.hamburger__Btn__x {
+  padding: 25px 50px 40px;
+  font-size: 24px;
+  color: var(--text-w-color);
+  text-align: right;
 }
 
 
-.btn__exit{
-  padding: 25px 50px;
-  font-size: 22px;
-
-}
 
 .hamburger__menu{
   padding: 200px 50px 25px;
@@ -389,14 +423,43 @@ nav div a {
 
 
 
-.content{
-  height: 100vh;
+.content1{
+  height: 1000px;
+  width: 100%;
+  overflow: hidden;
+  transform-origin: 50% 100%;
   background-color: rgb(185, 180, 180);
 }
-.content2{
-  height: 100vh;
-  background-color: rgb(90, 90, 90);
+
+.content1 img{
+  width: 100%;
 }
+
+.main__text{
+  padding: 0 50px;
+  position: absolute;
+  bottom: 5%;
+}
+
+.content2{
+  height: 1400px;
+  background-color: #edece9;
+  padding: 200px 50px;
+}
+
+
+
+.content2 ul{
+
+}
+.content2 ul li{
+}
+
+
+
+
+
+
 .content3{
   height: 100vh;
   background-color: rgb(112, 104, 104);
@@ -479,19 +542,33 @@ footer hr{
 
 .ft__sns a{
   text-decoration: none;
+
 }
 
 .ft__sns i{
-  width: 20px;
-  height: 20px;
-  padding: 7px;
   color: var(--deepdark-color);
   border: 1px solid var(--deepdark-color);
   border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
   text-align: center;
+  position: relative;
 }
+
+.ft__sns i::before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
 
 .ft__sns i:hover{
   color: var(--text-w-color);
   background-color: var(--deepdark-color);
 }
+
+
+
+
