@@ -1,10 +1,11 @@
 
-  
+
+
+
 const supahscroll = new SupahScroll({
   el: ".smoothscroll",
   speed: 0.1
 });
-
 
 
 
@@ -23,6 +24,8 @@ function scrollAble(){
 }
 
 
+
+
 const cart__Btn = document.querySelector(".your-order");
 const cart__Btn__x = document.querySelector(".cart__Btn__x");
 const cart__wrap = document.querySelector(".cart__wrap");
@@ -32,14 +35,14 @@ const cart = document.querySelector(".cart");
 
 
 const openCart = () => {
-  cart__wrap.classList.add('active');
+  cart__bg.classList.add('active');
   cart.classList.add('active');
   scrollDisable();
   
 }
 
 const closeCart = () => {
-  cart__wrap.classList.remove('active');
+  cart__bg.classList.remove('active');
   cart.classList.remove('active');
   scrollAble();
 
@@ -74,10 +77,6 @@ hamburger__Btn.addEventListener("click", openMenu);
 hamburger__Btn__x.addEventListener("click", closeMenu);
 
 
-
-
-
-
 const cart__total = document.querySelector(".cart__total")
 
 cart__total.addEventListener("click", () => {
@@ -85,16 +84,19 @@ cart__total.addEventListener("click", () => {
 })
 
 
-var newArrivals__swiper = new Swiper(".new-arrivals__swiper", {
-  slidesPerView: 4,
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: "auto",
   centeredSlides: true,
   spaceBetween: 30,
-  grabCursor: true,
   pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
+      el: ".swiper-pagination",
+      clickable: true,
   },
 });
+
+
+
+
 
 
 
@@ -112,3 +114,21 @@ function check() {
       }
   }
 }
+
+
+
+  const scrollmark = document.querySelector(".scrollmark")
+
+  scrollmark.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scroll(0, 800);
+  });
+
+  function getElementOffset(element) {
+    var de = document.documentElement;
+    var box = element.getBoundingClientRect();
+    var top = box.top + window.pageYOffset - de.clientTop;
+    // var left = box.left + window.pageXOffset - de.clientLeft;
+    // return { top: top, left: left };
+    return { top: top };
+  }
