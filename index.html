@@ -11,10 +11,6 @@
   <link rel="stylesheet" href="css/style.css">
 
 
-  <link
-  rel="stylesheet"
-  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-/>
 
 </head>
 <body>
@@ -38,9 +34,9 @@
           </a>
         </div>
     
-        <div class="your-order">Your Order <span class="item__quty quty__st1">3</span></div>
+        <div class="your-order">Your Order <p class="item__quty quty__st1">3</p></div>
       </nav>
-        <a href="#" class="navbar__toggleBtn">
+        <a class="navbar__toggleBtn">
           <i class="fal fa-bars navbar__btn"></i>  
         </a>
     </header>
@@ -52,7 +48,7 @@
         <i class="fal fa-times cart__Btn__x"></i> <br>
         <div class="cart__top">
           <h6>Your Order</h6>
-          <span class="item__quty quty__st2">3</span>
+          <p class="item__quty quty__st2">3</p>
         </div>
         <div class="cart__main">
           <hr>
@@ -115,20 +111,41 @@
       </ul>
     </div>
 
+    <div class="cart-notification">
+      Sorry. We don't have enough items in stock to add this item to your cart again.
+      <!-- Tembea BH Tote – Blue added to Your Order -->
+    </div>
+
+
 
     <div class="content1">
       <img src="src/wall1.jpg" alt="">
       <div class="main__text">
         <h3>WIND-Chime</h3>
         <p><span> Shop All</span>832</p>
+        <button class="faker">dddd</button>
+
+        <div class="bird-container"> 
+          <div class="bird"></div> 
+        </div>
+        
       </div>
+      <a class="scrollmark"><span></span>Scroll</a>
+
     </div>
+
+
+
     <div class="content2">
       <h2> Explore New Arrivals </h2>
-      <ul class="new-arrivals__swiper">
+      <ul class="newArrivals">
         <li>
           <div class="prod__img">
             <img src="/src/wind-chime.png" alt="">
+            <div class="prod__icon">
+              <i class="iconSound fas fa-volume"></i>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
           </div>
           <div class="prod__txt">
             Petty Knife - Wild Cherry
@@ -138,6 +155,25 @@
         <li>
           <div class="prod__img">
             <img src="/src/wind-chime.png" alt="">
+            <div class="prod__icon">
+              <i class="iconSound fas fa-volume"></i>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
+          </div>
+          <div class="prod__txt">
+            Petty Knife - Wild Cherry
+            <p class="prod__price">45,000₩</p>
+          </div>
+
+          
+        </li>
+        <li>
+          <div class="prod__img">
+            <img src="/src/wind-chime.png" alt="">
+            <div class="prod__icon">
+              <i class="iconSound fas fa-volume"></i>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
           </div>
           <div class="prod__txt">
             Petty Knife - Wild Cherry
@@ -147,6 +183,62 @@
         <li>
           <div class="prod__img">
             <img src="/src/wind-chime.png" alt="">
+            <div class="prod__icon">
+              <i class="iconSound fas fa-volume"></i>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
+          </div>
+          <div class="prod__txt">
+            Petty Knife - Wild Cherry
+            <p class="prod__price">45,000₩</p>
+          </div>
+        </li>
+        <li>
+          <div class="prod__img">
+            <img src="/src/wind-chime.png" alt="">
+            <div class="prod__icon">
+              <i class="iconSound fas fa-volume"></i>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
+          </div>
+          <div class="prod__txt">
+            Petty Knife - Wild Cherry
+            <p class="prod__price">45,000₩</p>
+          </div>
+        </li>
+        <li>
+          <div class="prod__img">
+            <img src="/src/wind-chime.png" alt="">
+            <div class="prod__icon">
+              <i class="iconSound fas fa-volume"></i>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
+          </div>
+          <div class="prod__txt">
+            Petty Knife - Wild Cherry
+            <p class="prod__price">45,000₩</p>
+          </div>
+        </li>
+        <li>
+          <div class="prod__img">
+            <img src="/src/wind-chime.png" alt="">
+            <div class="prod__icon">
+              <i class="iconSound fas fa-volume"></i>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
+          </div>
+          <div class="prod__txt">
+            Petty Knife - Wild Cherry
+            <p class="prod__price">45,000₩</p>
+          </div>
+        </li>
+        <li>
+          <div class="prod__img">
+            <img src="/src/wind-chime.png" alt="">
+            <div class="prod__icon">
+              <i class="iconSound fas fa-volume"></i>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
           </div>
           <div class="prod__txt">
             Petty Knife - Wild Cherry
@@ -154,11 +246,23 @@
           </div>
         </li>
       </ul>
+      
     </div>
-    <div class="content3">item display</div>
+    <div class="content3">
+      <h2> WIND-Chime <br> Making</h2>
+      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis magnam architecto exercitationem hic similique obcaecati corrupti vitae. Quibusdam amet iste voluptatum nostrum similique at quia corporis! Necessitatibus labore quod maxime.</p>
+      <p> next Workshops <br> </p>
+    </div>
     <div class="content4">full img</div>
     <div class="content5">instagram</div>
     
+
+    <ul class="product-list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
 
 
     <div class="popup">
@@ -170,15 +274,19 @@
     </div>
 
 
-<form id="emailform" method="POST" data-email="mungsome@gmail.com"
-action="https://script.google.com/macros/s/AKfycbz6Xi2O2zP8-akunYZCLmc6gc0_M6M--GloFSs7YM2Km7n4MwZ-S0ipPLHqet36W_IV/exec">
+<form id="emailform" method="POST" data-email="mungsome@gmail.com" target="iframe1"
+action="https://script.google.com/macros/s/AKfycbz63eikvbkfNsGuioni8Hi9GwsKCzgqQ_hg8m0oWyY8plC6njMespU_JaxJ4VMWX12m/exec">
   <h6>Newsletter</h6>
   <input type="email" name="EMAIL" placeholder="Email Address" required> <br>
-  <button type="Sumbit" onclick="return check();"> SEND </button>
+  <button type="button" onclick=reset()> SEND </button>
   <p>
     Sign up to our newsletter for special things and receive 10% off your next order.
   </p>
 </form>
+
+
+
+
 
     <footer>
       <div class="ft__main">
@@ -223,15 +331,14 @@ action="https://script.google.com/macros/s/AKfycbz6Xi2O2zP8-akunYZCLmc6gc0_M6M--
       </div>
     </footer>
 
+    
   </div>
 
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  
   <script src="js/supahscroll.js"></script>
   <script src="js/cookie.js"></script>
   <script src="js/main.js"></script>
-  <script data-cfasync="false" type="text/javascript"
-src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
-  <script src="js/form-submission-handler.js"></script>
+
+
+
 </body>
 </html>
