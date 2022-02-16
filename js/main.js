@@ -90,6 +90,10 @@ cart__total.addEventListener("click", () => {
 
 
 
+
+
+
+
 function check() {
   console.log('check')
   document.getElementsById("emailform").action = "https://script.google.com/macros/s/AKfycbz63eikvbkfNsGuioni8Hi9GwsKCzgqQ_hg8m0oWyY8plC6njMespU_JaxJ4VMWX12m/exec";
