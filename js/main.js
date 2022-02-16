@@ -125,9 +125,10 @@ function check() {
 
 
   faker.addEventListener("click", () =>{
+    cartAlert.classList.add("active");
     setTimeout( () => {
-      cartAlert.classList.toggle("active");
-    }, 2000);  
+      cartAlert.classList.remove("active");
+    }, 3000);  
   });
 
 
