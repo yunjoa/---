@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanks for buying</title>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Playfair+Display:wght@500&family=Song+Myung&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/inc.css">
+  <link rel="stylesheet" href="css/thanks.css">
+
+  <script type="module" src="js/inc.js"></script>
+  <script src="js/thanks.js"></script>
+
+
+</head>
+<body>
+  <main>
+    <header data-include="inc.html"></header>
+
+    <div class="smoothscroll">
+      <div class="bg">
+        <img src="src/thanks_bg.jpg" alt="">
+      </div>
+
+      <div class="thanks-card">
+        <div class="thanks__img">
+          <i class="fal fa-times btn__x "></i> 
+          <img src="src/buying.jpg" alt="">
+        </div>
+        <div class="thanks__content">
+
+          <p class="font__tx">Thank you</p>
+          <p class="font__con1">FOR YOUR ORDER</p>
+          <form id="emailform" method="POST">
+          <!-- data-email="mungsome@gmail.com" 
+          action="https://script.google.com/macros/s/AKfycbz63eikvbkfNsGuioni8Hi9GwsKCzgqQ_hg8m0oWyY8plC6njMespU_JaxJ4VMWX12m/exec"
+           -->
+  
+          <div class="email__form">
+            <div class="group"> 
+              <input type="email" name="EMAIL" onchage="validEmail(this)" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Email</label>
+            </div>
+            <button type="button" > SEND </button>
+            <!-- onclick=reset() -->
+          </div>
+          <p class="font__con2">
+            We hope you enjoy your purchase! <br>
+            If you want <span>15% off</span> your next order, <br>
+            Please let me know your email.
+  
+          </p>
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+
+</body>
+</html>
