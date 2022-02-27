@@ -1,10 +1,17 @@
 
+
+
+
+
 document.addEventListener('DOMContentLoaded', function(event) {
+// window.onload = function() {
+
 
 
   const btn__x = document.querySelector(".btn__x")
 
   btn__x.addEventListener("click", () => {
+    console.log(1)
     location.href="index.html"
   })
 
@@ -48,4 +55,10 @@ function validEmailCheck(obj){
 
 
 
+
+  // FIXME: 폼의 엔터와 버튼 클릭시 다른 펑션을 함
+  // FIXME: 이메일 유효성검사, 실행 후 불가능 시 POST X
+  // FIXME: 이메일 입력후 3초 뒤 홈으로 이동
+  
 });
+// };

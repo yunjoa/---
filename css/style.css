@@ -1,5 +1,8 @@
 
 
+body{
+  position: relative;
+}
 
 .content1{
   height: 100vh;

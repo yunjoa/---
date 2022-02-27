@@ -425,9 +425,9 @@ nav div a {
   color: var(--text-w-color);
   text-align: right;
   z-index: 25;
-  position: absolute;
+  position: fixed;
+  /* bottom: -10%; */
   top: -10%;
-
 }
 
 .cart-notification.active{
@@ -435,10 +435,15 @@ nav div a {
 }
 
 @keyframes cart {
+  /* 10%{bottom: -10%;}=
+  25%{bottom: 0%;}
+  50%{bottom: 0%;}
+  75%{bottom: 0%;}
+  100%{bottom: -10%;} */
   10%{top: -10%;}
   25%{top: 0%;}
   50%{top: 0%;}
-  25%{top: 0%;}
+  75%{top: 0%;}
   100%{top: -10%;}
 }
 

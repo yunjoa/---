@@ -1,3 +1,7 @@
+
+
+
+
 export function includeHTML(){
   const includeArea = document.querySelectorAll('[data-include]');
 
@@ -8,6 +12,7 @@ export function includeHTML(){
       .then(data =>{
           dom.innerHTML = data;
           dom.removeAttribute('data-include');
+          console.log(dom)
       });
   }//for
 

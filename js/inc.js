@@ -1,12 +1,21 @@
 
-import { includeHTML } from "../js/include.js";
-includeHTML();
 
 
 
-window.onload = function() {
+  import { includeHTML } from "../js/include.js";
+
+  
+  
+  
+  // document.addEventListener('DOMContentLoaded', function(event) {
+    window.onload = function() {
+  includeHTML();
 
 
+
+
+  
+  
   function scrollDisable(){
     document.body.classList.add('hidden');
     document.body.addEventListener('scroll touchmove mousewheel', 
@@ -22,12 +31,15 @@ window.onload = function() {
 
 
 
-  const cart__Btn = document.querySelector(".your-order");
+  // const cart__Btn = document.querySelector(".your-order");
+  // const cart__Btn = document.getElementsByClassName("your-order");
+  const cart__Btn = document.querySelector("#your-order");
   const cart__Btn__x = document.querySelector(".cart__Btn__x");
   const cart__wrap = document.querySelector(".cart__wrap");
   const cart__bg = document.querySelector(".cart__bg");
   const cart = document.querySelector(".cart");
 
+  console.log(cart__Btn)
 
 
   const openCart = () => {
@@ -119,4 +131,5 @@ window.onload = function() {
 
 
 
-  };
+ };
+// });
