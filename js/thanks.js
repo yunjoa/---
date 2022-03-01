@@ -19,22 +19,22 @@ document.addEventListener('DOMContentLoaded', function(event) {
   
 
 
-  function validEmail(obj){
-    console.log('check2')
-    if(validEmailCheck(obj)==false){
-        alert('올바른 이메일 주소를 입력해주세요.')
-        obj.value='';
-        obj.focus();
-        return false;
-      }
-}
+//   function validEmail(obj){
+//     console.log('check2')
+//     if(validEmailCheck(obj)==false){
+//         alert('올바른 이메일 주소를 입력해주세요.')
+//         obj.value='';
+//         obj.focus();
+//         return false;
+//       }
+// }
 
-function validEmailCheck(obj){
-    var pattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-    console.log('check')
+// function validEmailCheck(obj){
+//     var pattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+//     console.log('check')
 
-    return (obj.value.match(pattern)!=null)
-}
+//     return (obj.value.match(pattern)!=null)
+// }
 
 
   // document.getElementsById("emailform").action = "https://script.google.com/macros/s/AKfycbz63eikvbkfNsGuioni8Hi9GwsKCzgqQ_hg8m0oWyY8plC6njMespU_JaxJ4VMWX12m/exec";

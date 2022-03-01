@@ -299,6 +299,8 @@ nav div a {
 }
 
 
+
+
 .cart__total{
   background-color: var(--accent-color);
   padding: 30px 0 ;
@@ -430,7 +432,7 @@ nav div a {
   top: -10%;
 }
 
-.cart-notification.active{
+.cart-notification.down{
   animation: cart 3s ease-in-out ;
 }
 
