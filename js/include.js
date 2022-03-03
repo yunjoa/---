@@ -15,6 +15,10 @@ export function includeHTML(){
                 
 
   
+  const supahscroll = new SupahScroll({
+    el: ".smoothscroll",
+    speed: 0.1
+  });
   
   function scrollDisable(){
     document.body.classList.add('hidden');
@@ -28,17 +32,11 @@ export function includeHTML(){
     document.body.classList.remove('hidden')
   }
 
-
-
-
-  // const cart__Btn = document.querySelector(".your-order");
-  // const cart__Btn = document.getElementsByClassName("your-order");
   const cart__Btn = document.querySelector("#your-order");
   const cart__Btn__x = document.querySelector(".cart__Btn__x");
   const cart__wrap = document.querySelector(".cart__wrap");
   const cart__bg = document.querySelector(".cart__bg");
   const cart = document.querySelector(".cart");
-
 
   const openCart = () => {
     cart__bg.classList.add('active');
@@ -54,20 +52,14 @@ export function includeHTML(){
 
   }
 
-
-
   cart__Btn.addEventListener("click", openCart);
   cart__bg.addEventListener("click", closeCart);
   cart__Btn__x.addEventListener("click", closeCart);
 
 
-
-
-
   const hamburger__Btn = document.querySelector(".navbar__btn");
   const hamburger__menu = document.querySelector(".hamburger__menu__bg");
   const hamburger__Btn__x = document.querySelector(".hamburger__Btn__x");
-
 
   const openMenu = () => {
     hamburger__menu.classList.add('active');
@@ -86,12 +78,83 @@ export function includeHTML(){
   const cart__total = document.querySelector(".cart__total")
 
   cart__total.addEventListener("click", () => {
-    location.href="cart.html"
+    location.href="thanks.html"
   })
 
 
 
 
+
+  let cartItems;
+  if (localStorage.cart === null || localStorage.cart === '' || localStorage.cart === undefined) {
+    cartItems = [];
+  } else {
+    cartItems = localStorage.cart.split(',');
+  }
+
+
+
+
+
+
+
+
+  const productList = document.querySelector(".newArrivals")
+  function productListing() {
+    fetch("data/product.json")
+      .then(res => res.json())
+      .then(data => callback(data));
+
+    function callback(data) {
+      // list
+      data.items.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.className = `item-con${index} item-con`;
+        li.innerHTML +=
+          `<div class="prod__img">
+          <img src="src/${item.image[0]}" alt="">
+          <div class="prod__icon">
+            <i class="iconSound fas fa-volume"></i>
+            <i class="fas fa-shopping-cart cart__icon" id="${index}"></i>
+          </div>
+        </div>
+        <div class="prod__txt">
+          ${item.name}
+          <p class="prod__price">${item.price}</p>
+        </div>`;
+        productList.appendChild(li);
+        li.addEventListener("click", hoverCart)
+      })
+    }
+    cartCount();
+  }
+  
+  window.addEventListener('load', productListing);
+
+  // div.addEventListener("click", event => showProduct(data.item[j+i].name, data.item[j+i].detail, data.item[j+i].price, data.item[j+i].price, data.item[j+i].image, data.item[j+i].secondimage, data.item[j+i].thirdimage, j+i));
+  // categoryCons.appendChild(div);
+
+
+  function hoverCart(e) {
+    e.preventDefault();
+    const productId = e.target.id;
+    if (e.target.classList.contains("cart__icon")) {
+      if (cartItems.includes(productId)) {
+        // 삭제
+        cartItems = cartItems.filter(cartItem => cartItem !== productId);
+        localStorage.setItem("cart", cartItems);
+      } else {
+        cartItems.push(productId);
+        // 저장
+        localStorage.setItem("cart", cartItems);
+        cartNotification();
+      }
+    }
+  }
+
+
+
+  
 
 
 
@@ -119,9 +182,9 @@ function inCart(){
             cartMain.appendChild(div);
         } else {
             let totalMoney = 0;
+            // totalMoney += parseInt(data.items[cartItem].price.replace(/,/g,""));
             cartItems.forEach((cartItem, index) => {
             const div = document.createElement("div");
-            totalMoney += parseInt(data.items[cartItem].price.replace(/,/g,""));
             div.innerHTML = 
             `<div class="cart__item" id="${cartItem}">
             <div class="cart__img">
@@ -145,6 +208,9 @@ function inCart(){
             })
         }
     }
+
+
+
 }
 window.addEventListener('load', inCart);
 
@@ -159,21 +225,38 @@ function cartCount() {
 
 
 
-// if(cartItems.includes(parseInt(e.target.id))){
-  // e.target.parentElement.nextSibling.innerHTML = "이미<br>있어요!";
+function cartNotification(e) {
+  
+  fetch("data/product.json")
+  .then(res => res.json())
+  .then(data => callback(data));
+
+  function callback(data) {
+    const cartAlert = document.querySelector(".cart-notification")
+    data.items.forEach((item, index) => {
+      if(e.target.id == index){
+          cartAlert.innerText = `${item.name} – added to Your Order`
+        } 
+    })
+    inCart();
+
+    cartAlert.classList.add("down");
+    setTimeout(() => {
+      cartAlert.classList.remove("down");
+    }, 1200);
+  }
+}
+
+
 
 
 // 장바구니 상품 옵션
 function scdClickOption(e){
   if(e.target.innerText == "Remove"){
-    console.log(e.target);
-    console.log(this);
     this.remove();
-    cartItems = cartItems.filter(cartItem => cartItem !== parseInt(e.target.id));
+    cartItems = cartItems.filter(cartItem => cartItem !== e.target.id);
     localStorage.setItem("cart", cartItems);
-    console.log(cartItems)
     // cartMain.innerHTML = '';
-    // inCart();
     cartCount();
   }
 }
@@ -187,25 +270,6 @@ const inputQutys = document.querySelectorAll(".cart__item__form input")
       console.log("숫자")
     })
   });
-
-
-
-
-// let cartItems;
-
-// if(localStorage.cart === null || localStorage.cart === '' || localStorage.cart === undefined){
-//     cartItems = [];
-// } else {
-//     cartItems = localStorage.getItem("cart").split(",").map(Number);
-// } 
-
-// console.log(cartItems)
-
-
-
-
-
-
 
 
   // function check() {

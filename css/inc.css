@@ -219,8 +219,16 @@ nav div a {
 
 .cart__main{
   padding: 0 50px;
+  overflow: auto;
+  height: 700px;
+  padding-bottom: 120px;
+}
+.cart__item{
+  min-height: 240px;
 }
 
+.cart__main div:nth-last-of-type(1){
+}
 
 .cart__top{
   padding: 0 50px 5px;
@@ -427,13 +435,16 @@ nav div a {
   color: var(--text-w-color);
   text-align: right;
   z-index: 25;
-  position: fixed;
-  /* bottom: -10%; */
-  top: -10%;
+  position: sticky;
+  top: 0;
+
+  transition: all .5s ease-in-out;
+  display: none;
 }
 
 .cart-notification.down{
-  animation: cart 3s ease-in-out ;
+  display: block;
+  /* animation: cart 3s ease-in-out ; */
 }
 
 @keyframes cart {
