@@ -15,10 +15,10 @@ export function includeHTML(){
                 
 
   
-  const supahscroll = new SupahScroll({
-    el: ".smoothscroll",
-    speed: 0.1
-  });
+  // const supahscroll = new SupahScroll({
+  //   el: ".smoothscroll",
+  //   speed: 0.1
+  // });
   
   function scrollDisable(){
     document.body.classList.add('hidden');
@@ -86,11 +86,17 @@ export function includeHTML(){
 
 
   let cartItems;
-  if (localStorage.cart === null || localStorage.cart === '' || localStorage.cart === undefined) {
-    cartItems = [];
-  } else {
-    cartItems = localStorage.cart.split(',');
-  }
+  function test(){
+    if (localStorage.cart === null || localStorage.cart === '' || localStorage.cart === undefined) {
+      cartItems = [];
+    } else {
+      console.log(cartItems)
+      console.log(localStorage.cart)
+      cartItems = localStorage.cart.split(',');
+      console.log(localStorage.cart)
+      console.log(cartItems)
+    }
+  }test();
 
 
 
@@ -147,7 +153,7 @@ export function includeHTML(){
         cartItems.push(productId);
         // 저장
         localStorage.setItem("cart", cartItems);
-        cartNotification();
+        cartNotification(e);
       }
     }
   }
@@ -239,7 +245,6 @@ function cartNotification(e) {
         } 
     })
     inCart();
-
     cartAlert.classList.add("down");
     setTimeout(() => {
       cartAlert.classList.remove("down");

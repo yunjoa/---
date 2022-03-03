@@ -201,6 +201,9 @@ nav div a {
   right: -40%;
   transition: all .2s ease-in-out .1s;
   z-index: 25;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .cart.active{
@@ -221,13 +224,14 @@ nav div a {
   padding: 0 50px;
   overflow: auto;
   height: 700px;
-  padding-bottom: 120px;
+  /* padding-bottom: 120px; */
 }
 .cart__item{
   min-height: 240px;
 }
 
-.cart__main div:nth-last-of-type(1){
+.cart__main > div:nth-last-child(1){
+  padding-bottom: 50px;
 }
 
 .cart__top{
@@ -244,7 +248,6 @@ nav div a {
   font-size: 2rem;
   letter-spacing: -0.01em;  
   margin: 15px 0  15px 0;
-  
 }
 
 .quty__st2{
@@ -259,7 +262,6 @@ nav div a {
   font-size: 0.6rem;
   border-radius: 50px;
   background-color: var(--accent-color);
-
 }
 
 .cart__item{
@@ -313,10 +315,9 @@ nav div a {
   background-color: var(--accent-color);
   padding: 30px 0 ;
   width: 100%;
-  position: absolute;
-  bottom: 0;
   left: 0;
   text-align: center;
+  align-items: flex-end;
 }
 
 .cart__total:hover{
@@ -437,22 +438,22 @@ nav div a {
   z-index: 25;
   position: sticky;
   top: 0;
-
+  height: 0px;
   transition: all .5s ease-in-out;
+  /* opacity: 0%; */
   display: none;
 }
 
 .cart-notification.down{
   display: block;
+  height: auto;
+
+  /* opacity: 100%; */
+
   /* animation: cart 3s ease-in-out ; */
 }
 
 @keyframes cart {
-  /* 10%{bottom: -10%;}=
-  25%{bottom: 0%;}
-  50%{bottom: 0%;}
-  75%{bottom: 0%;}
-  100%{bottom: -10%;} */
   10%{top: -10%;}
   25%{top: 0%;}
   50%{top: 0%;}
