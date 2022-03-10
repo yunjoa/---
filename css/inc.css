@@ -12,6 +12,9 @@
   --trans-b-color: rgba(61, 56, 56, 0.452);
 
   --font-product: 'Roboto', sans-serif;
+  --font-title: 'Poiret One', cursive;
+
+  --font-price: 'Comfortaa', cursive;
 }
 
 html{
@@ -264,6 +267,33 @@ nav div a {
   background-color: var(--accent-color);
 }
 
+.cart__empty{
+  text-align: left;
+  padding-top: 40px;
+}
+
+.cart__empty p:nth-child(1){
+  line-height: 1.4rem;
+}
+.cart__empty p:nth-child(2){
+  font-size: 0.8rem;
+  margin-top: 40px;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 50px;
+  border: 1px solid var(--accent-color);
+}
+
+.cart__empty p:nth-child(2):hover{
+  background-color: var(--accent-color);
+  color: var(--text-w-color);
+}
+
+.cart__empty img{
+  width: 80%;
+  margin-top: 80%;
+  margin-left: 40%;
+}
 .cart__item{
   width: 100%;
   text-align: left;
@@ -289,11 +319,11 @@ nav div a {
 }
 
 .cart__item-name{
-  font-family: var(--font-product);
   line-height: 1.2em;
   padding-bottom: 10px ;
 }
 .cart__item-price{
+  font-family: var(--font-price);
   /* padding-bottom: 10px ; */
   line-height: 4em;
 }
@@ -308,6 +338,14 @@ nav div a {
   font-weight: bold;
 }
 
+.cart__item__form a{
+  color: var(--trans-b-color);
+  cursor: default;
+}
+.cart__item__form a:hover{
+  color: var(--text-b-color);
+  cursor: pointer;
+}
 
 
 

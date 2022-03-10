@@ -109,7 +109,8 @@ export function includeHTML(){
   function productListing() {
     fetch("data/product.json")
       .then(res => res.json())
-      .then(data => callback(data));
+      .then(data => callback(data))
+
 
     function callback(data) {
       // list
@@ -126,7 +127,7 @@ export function includeHTML(){
         </div>
         <div class="prod__txt">
           ${item.name}
-          <p class="prod__price">${item.price}</p>
+          <p class="prod__price">${item.price}₩</p>
         </div>`;
         productList.appendChild(li);
         li.addEventListener("click", hoverCart)
@@ -181,8 +182,13 @@ function inCart(){
         if(localStorage.cart === null || localStorage.cart === '' || localStorage.cart === undefined){
             const div = document.createElement("div");
             div.innerHTML = 
-            `<div>
-            장바구니에 담긴 상품이 없습니다.
+            `<div class="cart__empty">
+            <p> Looks like you haven’t added <br>
+            anthing to your order yet.</p>
+
+            <p><a href="shop.html">Going shopping</a></p>
+            <img src="src/basket.png" alt="">
+
             </div>
             `;
             cartMain.appendChild(div);
@@ -201,7 +207,7 @@ function inCart(){
               <p class="cart__item-price">${data.items[cartItem].price}₩</p>
               <hr>
               <div class="cart__item__form">
-                <input type="number" class="cart__item__form__qty" >
+                <input type="number" value="1" class="cart__item__form__qty" >
                 <a id="${cartItem}">Remove</a>
               </div>
             </div>
