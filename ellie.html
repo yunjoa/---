@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // cloning
+      const user = { name: "ellie", age: "20" };
+      const user2 = user;
+      // user2.name = "coder";
+      console.log(user);
+      // 원본훼손
+
+      //old way
+      const user3 = {};
+      for (key in user) {
+        user3[key] = user[key];
+      }
+      console.clear();
+      user3.name = "coder";
+      console.log(user3);
+      console.log(user);
+
+      const user
+      Object.assign();
+    </script>
+  </body>
+</html>

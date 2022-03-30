@@ -1,41 +1,64 @@
-
-    <div class="top">
-
-        
-      <div class="nav__wrap">
-        <h1>
-          <a href="#">
-            <img src="src/logo__orobell.png" alt="">
-          </a>
-        </h1>
-        <nav>
-          <div><a href="about.html">About</a></div>
-          <div><a href="shop.html">Shop</a></div>
-          <div class="search-box">
-            <input type="text" class="search-txt" placeholder="Type to search">
-            <a class="search-btn" href="#">
-              Search
-            </a>
-          </div>
-      
-          <div class="your-order" id="your-order">Your Order <p class="item__quty quty__st1">3</p></div>
-        </nav>
-          <a class="navbar__toggleBtn">
-            <i class="fal fa-bars navbar__btn"></i>  
-          </a>
-      </div>
-  
-      <div class="cart__wrap">
-        <div class="cart__bg">  
+<div class="top">
+  <div class="nav__wrap">
+    <h1>
+      <a href="#">
+        <img src="src/logo__orobell.png" alt="" />
+      </a>
+    </h1>
+    <nav>
+      <div><a href="about.html">About</a></div>
+      <div><a href="shop.html">Shop</a></div>
+      <!-- <div class="search-box">
+        <input
+          type="text"
+          onkeyup="search(this);"
+          id="word"
+          class="search-txt"
+          placeholder="Type to search"
+        />
+        <a class="search-btn" href="#" id="btn_search"> Search </a>
+      </div> -->
+      <form class="search search-wrap search-box">
+        <input hidden="hidden" />
+        <input
+          type="text"
+          class="searchTerm search-txt"
+          id="searchBar"
+          placeholder="Type to search"
+        />
+        <a class="search-btn" href="#" id="btn_search"> Search </a>
+        <div class="searched__wrap">
+          <ul class="searched">
+            <!-- <li>
+              <div class="searched__img">
+                <img src="src/arkTree.jpg" alt="" />
+              </div>
+              <p class="search__item">searched__img</p>
+            </li> -->
+          </ul>
         </div>
-        <div class="cart">
-          <i class="fal fa-times cart__Btn__x"></i> <br>
-          <div class="cart__top">
-            <h6>Your Order</h6>
-            <p class="item__quty quty__st2">0</p>
-          </div>
-          <div class="cart__main">
-            <!-- <div class="cart__item">
+      </form>
+
+      <div class="your-order" id="your-order">
+        Your Order
+        <p class="item__quty quty__st1">3</p>
+      </div>
+    </nav>
+    <a class="navbar__toggleBtn">
+      <i class="fal fa-bars navbar__btn"></i>
+    </a>
+  </div>
+
+  <div class="cart__wrap">
+    <div class="cart__bg"></div>
+    <div class="cart">
+      <i class="fal fa-times cart__Btn__x"></i> <br />
+      <div class="cart__top">
+        <h6>Your Order</h6>
+        <p class="item__quty quty__st2">0</p>
+      </div>
+      <div class="cart__main">
+        <!-- <div class="cart__item">
               <div class="cart__img">
                 <img src="src/wind-chime.png" alt="">
               </div>
@@ -49,31 +72,28 @@
                 </div>
               </div>
             </div> -->
-          </div>
-      
-          <div class="cart__total">
-            <p class="cart__total__price">
-              Check Out ― <span>00,000</span>₩
-            </p>
-            <p class="inform__freeship">
-              Free shipping on domestic orders over 30,000₩
-            </p>
-          </div>
-        </div>
       </div>
-      <div class="hamburger__menu__bg">
-        <i class="fal fa-times hamburger__Btn__x"></i> <br>
-  
-        <ul class="hamburger__menu">
-          <li><a href="about.html">About</a></li>
-          <hr>
-          <li><a href="shop.html">Shop</a></li>
-          <hr>
-          <li><a href="">Workshops</a></li>
-          <hr>
-          <li><a href="">Journal</a></li>
-          <hr>
-        </ul>
+
+      <div class="cart__total">
+        <p class="cart__total__price">Check Out ― <span>00,000</span>₩</p>
+        <p class="inform__freeship">
+          Free shipping on domestic orders over 30,000₩
+        </p>
       </div>
     </div>
+  </div>
+  <div class="hamburger__menu__bg">
+    <i class="fal fa-times hamburger__Btn__x"></i> <br />
 
+    <ul class="hamburger__menu">
+      <li><a href="about.html">About</a></li>
+      <hr />
+      <li><a href="shop.html">Shop</a></li>
+      <hr />
+      <li><a href="">Workshops</a></li>
+      <hr />
+      <li><a href="">Journal</a></li>
+      <hr />
+    </ul>
+  </div>
+</div>

@@ -1,31 +1,27 @@
-
-
-
-.all__wrap{
+.all__wrap {
   padding: 0 50px;
 }
 
-.shopall{
+.shopall {
   margin-top: 270px;
   font-family: var(--font-title);
   font-size: 3rem;
   padding-bottom: 30px;
 }
 
-.shopall span{
+.shopall span {
   font-size: 1.4rem;
 }
 
-.shopall__explanation{
+.shopall__explanation {
   padding-bottom: 50px;
   line-height: 1.4rem;
 }
 
-
 .categories {
   padding-bottom: 40px;
 }
-.categories button{
+.categories button {
   background-color: none;
   border: 1px solid var(--trans-b-color);
   padding: 12px;
@@ -33,24 +29,24 @@
   color: var(--accent-color);
 }
 
-.categories button:hover{
-  background-color: var( --accent-color);
+.categories button:hover {
+  background-color: var(--accent-color);
   color: var(--text-w-color);
 }
 
-
-
-button.clicked{
-  background-color: var( --accent-color);
+button.clicked {
+  background-color: var(--accent-color);
   color: var(--text-w-color);
 }
 
-.product-start{
+.product-start {
   margin-bottom: 30px;
 }
 
-
-.product-lis-wrap{
+.invisible {
+  display: none;
+}
+.product-lis-wrap {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -59,28 +55,26 @@ button.clicked{
   /* flex-flow: row wrap; */
 }
 
-.product-lis-wrap li{
-  flex:0 0 auto;
-  width: calc(100%/4);
+.product-lis-wrap li {
+  flex: 0 0 auto;
+  width: calc(100% / 4);
   padding-right: 20px;
 }
 
-.prod__img{
+.prod__img {
   width: 100%;
   height: 500px;
   position: relative;
   overflow: hidden;
 }
 
-
-.prod__img img{
+.prod__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-
-.prod__img:hover .prod__icon{
+.prod__img:hover .prod__icon {
   bottom: 0;
 }
 
@@ -97,11 +91,10 @@ button.clicked{
   color: var(--text-w-color);
 
   font-size: 18px;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-
-.prod__icon i{
+.prod__icon i {
   padding: 10px;
   width: 40px;
 }
@@ -110,14 +103,11 @@ button.clicked{
   padding: 20px 0;
   font-weight: 500;
 }
-.prod__price{
+.prod__price {
   line-height: 25px;
   padding-top: 5px;
   font-family: var(--font-price);
 }
-
-
-
 
 .product-list {
   display: flex;
@@ -136,4 +126,3 @@ button.clicked{
   flex: 2;
   background-color: #a12460;
 }
-
