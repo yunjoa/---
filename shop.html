@@ -19,10 +19,12 @@
     <link rel="stylesheet" href="css/inc.css" />
     <link rel="stylesheet" href="css/shop.css" />
 
-    <script type="module" src="js/inc.js"></script>
-    <script src="js/shop.js"></script>
+    <!-- <script type="module" src="js/inc.js"></script> -->
+    <script src="js/shop.js" type="module"></script>
   </head>
   <body>
+    <header data-include="inc.html"></header>
+
     <div class="all__wrap">
       <div class="shopall">Shop All <span>0</span></div>
       <p class="shopall__explanation">
@@ -42,5 +44,6 @@
       <hr class="product-start" />
       <ul class="product-lis-wrap"></ul>
     </div>
+    <footer data-include="footer.html"></footer>
   </body>
 </html>

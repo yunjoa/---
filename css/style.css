@@ -343,7 +343,6 @@ body {
 }
 
 .content5 {
-  height: 1100px;
   padding: 0 50px;
   background-color: #f8f7f6;
   text-align: center;
@@ -395,13 +394,14 @@ body {
 
 .insta__container {
   position: relative;
+  height: 500px;
 }
 
 .instabtn__left,
 .instabtn__right {
   position: absolute;
   top: 50%;
-  transform: translateY(-85%);
+  transform: translateY(-200%);
   font-size: 2rem;
   background-color: none;
   border: none;
@@ -416,29 +416,23 @@ body {
 
 .insta__feed {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
+  width: 200%;
   flex-direction: row;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
   transition: transform 0.5s;
+  height: auto;
 }
 
 .insta__feed li {
-  width: calc(100% / 5);
-  min-width: 250px;
-
-  height: 400px;
-  margin-right: 20px;
-}
-.insta__feed li:nth-last-child(1) {
-  margin-right: 0px;
+  width: 9%;
+  /* height: 300px; */
 }
 
 .feed__img {
   width: 100%;
-  height: 360px;
+  height: 250px;
   margin-bottom: 14px;
 }
 .feed__img img {
@@ -448,6 +442,7 @@ body {
 }
 
 footer {
+  height: auto;
   /* background: linear-gradient(rgb(24, 44, 38), rgb(32, 29, 30)); */
   background-color: var(--background-color);
   padding: 60px 50px;

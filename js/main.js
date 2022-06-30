@@ -10,18 +10,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     window.scroll(0, content1.clientHeight);
   });
 
-  // for(let i=0; i<iconSounds.length; i++){
-  //   iconSounds[i].addEventListener("click", function(){
-  //     if(iconSounds[i].classList.contains("fa-volume")){
-  //       iconSounds[i].classList.replace("fa-volume","fa-volume-slash")
-  //     } else {
-  //       iconSounds[i].classList.replace("fa-volume-slash","fa-volume")
-  //     }
-  //   });
-  // };
-
-  // });
-
   // FIXME: 띵똥위치랑 스톡갯수에 따라 innertext 1품절, 2이미장바구니, 3넣었습니다, 4마지막상품입니다.
 
   const slider = document.querySelector(".newArrivals");
@@ -50,4 +38,42 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const walk = (x - startX) * 1;
     slider.scrollLeft = scrollLeft - walk;
   });
+
+  const instabtn__right = document.querySelector(".instabtn__right");
+  const instabtn__left = document.querySelector(".instabtn__left");
+  const insta__feed = document.querySelector(".insta__feed");
+  const insta__container = document.querySelector(".insta__container");
+  let slideNum = 0;
+
+  function oneSlide() {
+    const insta__con = document.querySelectorAll(".insta__feed li");
+    insta__feed.style.transform = `translateX(-${
+      (insta__feed.offsetWidth / insta__con.length) * slideNum
+    }px)`;
+  }
+  oneSlide();
+
+  function specialSlide(event) {
+    const insta__con = document.querySelectorAll(".insta__feed li");
+    let slideEa = Math.round(
+      insta__con.length /
+        (insta__feed.getBoundingClientRect().width /
+          insta__container.getBoundingClientRect().width)
+    );
+    console.log(slideEa);
+    if (
+      event.target.classList[1] == "fa-angle-right" &&
+      slideNum < insta__con.length - slideEa
+    ) {
+      slideNum++;
+      // slideNum = slideNum+5;
+    } else if (event.target.classList[1] == "fa-angle-left" && slideNum > 0) {
+      slideNum--;
+      // slideNum = slideNum-5;
+    }
+    oneSlide();
+  }
+
+  instabtn__left.addEventListener("click", specialSlide);
+  instabtn__right.addEventListener("click", specialSlide);
 });

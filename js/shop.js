@@ -1,7 +1,40 @@
+import { includeHTML } from "../js/include.js";
+
 document.addEventListener("DOMContentLoaded", function (event) {
   // window.onload = function() {
 
+  includeHTML();
   const productListing = document.querySelector(".product-lis-wrap");
+
+  function categoryChange() {
+    fetch("data/product.json")
+      .then((res) => res.json())
+      .then((data) => callback(data));
+  }
+  window.addEventListener("load", categoryChange);
+
+  function callback(data) {
+    const btn_category = document.querySelectorAll(".categories button");
+
+    btn_category.forEach((category) => {
+      category.addEventListener("click", () => {
+        let tag = "";
+        tag = category.dataset.type;
+        // console.log("clicked");
+        console.log(tag);
+
+        data.items.forEach((item, i) => {
+          const products = document.querySelectorAll(".item-con");
+          // console.log(item.tag);
+          if (item.tag.includes(tag)) {
+            products[i].classList.remove("invisible");
+          } else {
+            products[i].classList.add("invisible");
+          }
+        });
+      });
+    });
+  }
 
   function listing() {
     fetch("data/product.json")
@@ -29,36 +62,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   window.addEventListener("load", listing);
-
-  function categoryChange() {
-    const btn_category = document.querySelectorAll(".categories button");
-
-    fetch("data/product.json")
-      .then((res) => res.json())
-      .then((data) => callback(data));
-
-    function callback(data) {
-      btn_category.forEach((category) => {
-        const products = document.querySelectorAll(".item-con");
-
-        category.addEventListener("click", () => {
-          tag = category.dataset.type;
-          // console.log("clicked");
-          console.log(tag);
-
-          data.items.forEach((item, i) => {
-            // console.log(item.tag);
-            if (item.tag.includes(tag)) {
-              products[i].classList.remove("invisible");
-            } else {
-              products[i].classList.add("invisible");
-            }
-          });
-        });
-      });
-    }
-  }
-  window.addEventListener("load", categoryChange);
 
   const checkBtns = document.querySelectorAll(".categories button");
   checkBtns.forEach((btn) => {

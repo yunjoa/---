@@ -10,7 +10,7 @@ export function includeHTML() {
 
         // const supahscroll = new SupahScroll({
         //   el: ".smoothscroll",
-        //   speed: 0.1
+        //   speed: 0.1,
         // });
 
         function scrollDisable() {
@@ -149,11 +149,11 @@ export function includeHTML() {
           ) {
             cartItems = [];
           } else {
-            console.log(cartItems);
-            console.log(localStorage.cart);
+            // console.log(cartItems);
+            // console.log(localStorage.cart);
             cartItems = localStorage.cart.split(",");
-            console.log(localStorage.cart);
-            console.log(cartItems);
+            // console.log(localStorage.cart);
+            // console.log(cartItems);
           }
         }
         test();
@@ -192,10 +192,22 @@ export function includeHTML() {
 
         window.addEventListener("load", productListing);
 
-        // div.addEventListener("click", event => showProduct(data.item[j+i].name, data.item[j+i].detail, data.item[j+i].price, data.item[j+i].price, data.item[j+i].image, data.item[j+i].secondimage, data.item[j+i].thirdimage, j+i));
+        // div.addEventListener("click", (event) =>
+        //   showProduct(
+        //     data.item[j + i].name,
+        //     data.item[j + i].detail,
+        //     data.item[j + i].price,
+        //     data.item[j + i].price,
+        //     data.item[j + i].image,
+        //     data.item[j + i].secondimage,
+        //     data.item[j + i].thirdimage,
+        //     j + i
+        //   )
+        // );
         // categoryCons.appendChild(div);
 
         function hoverCart(e) {
+          console.log(e.target);
           e.preventDefault();
           const productId = e.target.id;
           if (e.target.classList.contains("cart__icon")) {
@@ -213,9 +225,9 @@ export function includeHTML() {
             }
           }
           cartCount();
+          test();
 
           // 오디오설정
-          FIXME: console.log(e.target);
           const iconSounds = document.querySelectorAll(".iconSound");
           const audios = document.querySelectorAll("audio");
           console.log(audios[0]);
@@ -224,13 +236,15 @@ export function includeHTML() {
           iconSounds.forEach((item, i) => {
             item.addEventListener("click", function () {
               if (e.target.id.match(item.id)) {
-                isPlaying = true;
-                audios[i].play();
-                console.log("슬래쉬!");
-                item.classList.replace("fa-volume", "fa-volume-slash");
-              } else {
-                item.classList.replace("fa-volume-slash", "fa-volume");
-                console.log("슬래쉬해제");
+                if (item.classList.contains("fa-volume")) {
+                  isPlaying = true;
+                  audios[i].play();
+                  item.classList.replace("fa-volume", "fa-volume-slash");
+                } else if (item.classList.contains("fa-volume-slash")) {
+                  isPlaying = false;
+                  audios[i].pause();
+                  item.classList.replace("fa-volume-slash", "fa-volume");
+                }
               }
             });
           });
@@ -332,13 +346,9 @@ export function includeHTML() {
               (cartItem) => cartItem !== e.target.id
             );
             localStorage.setItem("cart", cartItems);
-            // cartMain.innerHTML = '';
 
-            totalMoney += parseInt(
-              data.items[cartItem].price.replace(/,/g, "")
-            );
-            totalPrice.innerText = totalMoney.toLocaleString();
-
+            inCart();
+            totalPrice.innerText = 0;
             cartCount();
           }
         }
