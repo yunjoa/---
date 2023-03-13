@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         list.innerHTML += `<div class="prod__img">
             <img src="src/${item.image[0]}" alt="">
             <div class="prod__icon">
-            <i class="iconSound fas fa-volume"></i>
+            <i class="iconSound fas fa-volume id="audio${index}"></i>
             <i class="fas fa-shopping-cart cart__icon" id="${index}"></i>
           </div>
         </div>
